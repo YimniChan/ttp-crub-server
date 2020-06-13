@@ -5,6 +5,7 @@ const Student = db.define("student", {
 
   firstName: { type: Sequelize.STRING, allowNull: false },
   lastName: { type: Sequelize.STRING, allowNull: false },
+  email: { type: Sequelize.STRING, allowNull: false },
   gpa: { type: Sequelize.FLOAT, allowNull: false },
   imageUrl: {
     type: Sequelize.STRING,
