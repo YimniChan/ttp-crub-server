@@ -76,7 +76,7 @@ router.put('/:id', async (req, res, next) =>{
   }
 });
 
-router.delete('/:id', async (req, res, next) =>{\
+router.delete('/:id', async (req, res, next) =>{
     const { id } = req.params;
   try{
     const student = await Student.findByPk(id);
