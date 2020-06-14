@@ -33,11 +33,11 @@ router.get('/:id',async (req, res, next)=>{
 });
 
 router.post('/', async (req, res, next)=>{
-    const { firstname, lastname, email, gpa, imageUrl } = req.body;
+    const { firstName, lastName, email, gpa, imageUrl } = req.body;
     // Create a campus object
     const studentObj = {
-        firstname: firstname,
-        lastname: lastname,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         gpa: gpa,
         imageUrl: imageUrl,
@@ -54,11 +54,11 @@ router.post('/', async (req, res, next)=>{
 
 router.put('/:id', async (req, res, next) =>{
     const { id } = req.params;
-    const { firstname, lastname, email, gpa, imageUrl } = req.body;
+    const { firstName, lastName, email, gpa, imageUrl } = req.body;
     // Create a campus object
     const updatedObj = {
-        firstname: firstname,
-        lastname: lastname,
+        firstName: firstName,
+        lastName: lastName,
         email: email,
         gpa: gpa,
         imageUrl: imageUrl,
