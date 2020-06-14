@@ -22,8 +22,8 @@ router.get('/:id',async (req, res, next)=>{
     // query the database for a campus with matching id
     try {
       // if successful:
-      const student = await Student.findByPk(id);
-      //const student = await Student.findByPk(id , {include: Campus});
+      //const student = await Student.findByPk(id);
+      const student = await Student.findByPk(id , {include: Campus});
       // send back the campus as a response
       res.status(200).json(student);
     } catch (err) {
@@ -32,6 +32,25 @@ router.get('/:id',async (req, res, next)=>{
       next(err);
     }
 });
+
+router.get("/:id/campuses", async (req, res, next) => {
+  const { id } = req.params;
+  // find the campus associated with the id
+  let foundStudent;
+  try {
+    foundStudent = await Student.findByPk(id);
+  } catch (err) {
+    next(err);
+  }
+
+  try {
+    const campusOfStudents = await foundStudent.getCampuses();
+    res.status(200).json(campusOfStudents);
+  } catch (err) {
+    next(err);
+  }
+});
+
 
 router.post('/', async (req, res, next)=>{
     const { firstName, lastName, email, gpa, imageUrl } = req.body;
