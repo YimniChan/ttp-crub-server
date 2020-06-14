@@ -18,7 +18,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-/**router.get('/:id',async (req, res, next)=>{
+router.get('/:id',async (req, res, next)=>{
     const { id } = req.params;
     // query the database for a campus with matching id
     try {
@@ -51,7 +51,7 @@ router.post('/', async (req, res, next)=>{
   catch (err){
     next(err);
   }
-}); */
+}); 
 
 
 router.put("/:id", async (req, res, next) => {
@@ -68,7 +68,7 @@ router.put("/:id", async (req, res, next) => {
   }
 });
 
-/**router.delete('/:id', async (req, res, next) =>{
+router.delete('/:id', async (req, res, next) =>{
     const { id } = req.params;
   try{
     const student = await Student.findByPk(id);
@@ -78,6 +78,8 @@ router.put("/:id", async (req, res, next) => {
   catch(err){
     next(err);
   }
-}); */
+}); 
+
+
 module.exports = router;
 
