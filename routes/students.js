@@ -22,7 +22,7 @@ router.get('/:id',async (req, res, next)=>{
     // query the database for a campus with matching id
     try {
       // if successful:
-      const student = await Student.findByPk(id /*, {include: Campus }*/);
+      const student = await Student.findByPk(id /*, {include: Campus}*/);
       // send back the campus as a response
       res.status(200).json(student);
     } catch (err) {
