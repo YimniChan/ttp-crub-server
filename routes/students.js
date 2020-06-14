@@ -85,6 +85,7 @@ router.put('/:id', async (req, res, next) =>{
     };
   try{
     const student = await Student.findByPk(id);
+    //const student = await Student.findByPk(id , {include: Campus});
     console.log(updatedObj);
     await student.set(updatedObj);
     const updatedStudent = await student.save();
